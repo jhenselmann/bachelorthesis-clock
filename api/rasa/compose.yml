@@ -1,0 +1,38 @@
+services:
+  rasa-de:
+    image: rasa/rasa:latest
+    container_name: rasa-de
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./rasa-de:/app
+    working_dir: /app
+    user: "1000:1000"
+    environment:
+      POSTGRES_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_SERVER}:${POSTGRES_PORT}/${POSTGRES_DB}?options=-csearch_path=rasa_de"
+    restart: unless-stopped
+    command: [run, --enable-api, --debug, --connector, rest]
+    networks:
+      - rasa-network
+
+  actions-de:
+    build:
+      context: .
+      dockerfile: actions.Dockerfile
+    container_name: rasa-actions-de
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./rasa-de/actions:/app/actions
+    working_dir: /app
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o}
+    restart: unless-stopped
+    command: [start, --actions, actions, --debug, --port, "5055"]
+    networks:
+      - rasa-network
+
+networks:
+  rasa-network:
+    driver: bridge

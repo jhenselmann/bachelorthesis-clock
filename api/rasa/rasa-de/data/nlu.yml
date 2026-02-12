@@ -1,0 +1,765 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hallo
+      - hi
+      - hey
+      - guten morgen
+      - guten tag
+      - guten abend
+      - servus
+      - grüß gott
+      - moin
+      - grüezi
+
+  - intent: goodbye
+    examples: |
+      - tschüss
+      - auf wiedersehen
+      - bis bald
+      - bis später
+      - ciao
+      - ade
+      - machs gut
+      - bis dann
+      - bye bye
+      - schönen tag noch
+
+  - intent: thank_you
+    examples: |
+      - danke
+      - vielen dank
+      - danke schön
+      - herzlichen dank
+      - ich danke dir
+      - danke für deine hilfe
+      - besten dank
+      - merci
+      - thanks
+      - dankeschön
+
+  - intent: deny
+    examples: |
+      - nein
+      - nö
+      - nicht wirklich
+      - auf keinen fall
+      - niemals
+      - das stimmt nicht
+      - falsch
+      - nein danke
+      - lieber nicht
+      - das will ich nicht
+
+  - intent: affirm
+    examples: |
+      - ja
+      - ja bitte
+      - genau
+      - richtig
+      - stimmt
+      - korrekt
+      - natürlich
+      - klar
+      - auf jeden fall
+      - ja gerne
+
+  - intent: who_are_you
+    examples: |
+      - wer bist du
+      - wie heißt du
+      - was bist du
+      - stell dich vor
+      - sag mir wer du bist
+      - wie ist dein name
+      - bist du ein roboter
+      - bist du eine ki
+      - was für ein assistent bist du
+      - erzähl mir von dir
+
+  - intent: how_are_you
+    examples: |
+      - wie geht es dir
+      - wie gehts
+      - alles klar bei dir
+      - wie fühlst du dich
+      - gehts dir gut
+      - was macht die stimmung
+      - wie läufts
+      - alles gut
+      - wie ist deine laune
+      - bist du okay
+
+  - intent: what_can_you_do
+    examples: |
+      - was kannst du alles
+      - was sind deine fähigkeiten
+      - wobei kannst du mir helfen
+      - was kann ich dich fragen
+      - zeig mir deine funktionen
+      - was bietest du an
+      - welche befehle kennst du
+      - was ist möglich
+      - erkläre deine features
+      - hilf mir zu verstehen was du kannst
+
+  - intent: repeat_last
+    examples: |
+      - kannst du das wiederholen
+      - sag das nochmal
+      - was hast du gesagt
+      - ich habe das nicht verstanden
+      - nochmal bitte
+      - wiederhole das
+      - kannst du das nochmal sagen
+      - ich hab dich nicht verstanden
+      - noch einmal
+      - pardon
+
+  - intent: fallback_question
+    examples: |
+      - ich verstehe nicht
+      - was meinst du
+      - kannst du das erklären
+      - ich bin verwirrt
+      - das ergibt keinen sinn
+      - hilf mir zu verstehen
+      - was bedeutet das
+      - ich komme nicht mit
+      - erkläre das bitte
+      - ich weiß nicht was du meinst
+
+  - intent: nlu_fallback
+    examples: |
+      - blablabla
+      - asdfghjkl
+      - ???
+      - 123456789
+      - xxxxxx
+      - hjkdsahfkjdshf
+      - qwertzuiop
+      - gibberish
+      - lalalalala
+      - zufälliger text
+
+  - intent: ask_time
+    examples: |
+      - wie spät ist es
+      - wie viel uhr ist es
+      - sag mir die zeit
+      - welche uhrzeit haben wir
+      - zeit bitte
+      - kannst du mir die uhrzeit sagen
+      - was ist die aktuelle zeit
+      - wie viel uhr haben wir
+      - welche zeit ist es
+      - wie spät haben wir es gerade
+      - Uhrzeit
+      - wie spät
+      - wie spät ist
+      - wieviel uhr
+      - wieviel uhr ist es
+      - uhr
+      - die uhrzeit
+      - aktuelle uhrzeit
+      - aktuelle zeit
+      - sag mir die uhrzeit
+      - wie viel uhr haben wir gerade
+      - weißt du wie spät es ist
+      - hast du die uhrzeit
+      - welche uhrzeit ist es gerade
+      - könntest du mir die zeit sagen
+      - was sagt die uhr
+      - gib mir die zeit
+      - zeig mir die uhrzeit
+
+  - intent: set_alarm
+    examples: |
+      - stelle einen wecker auf [7 uhr](time)
+      - wecke mich um [6:30](time)
+      - ich brauche einen alarm um [8 uhr morgens](time)
+      - kannst du mich um [halb sieben](time) wecken
+      - stelle einen wecker für [5:45](time)
+      - bitte wecke mich morgen früh um [6](time)
+      - ich muss um [7:15](time) geweckt werden
+      - alarm auf [8:30](time) stellen
+      - setze einen wecker für [viertel nach sechs](time)
+      - mach einen wecker für [9 uhr](time) an
+      - wecker auf [7](time)
+      - alarm [6 uhr 30](time)
+      - weck mich [morgen um 8](time)
+      - stelle wecker auf [halb acht](time)
+      - [22 uhr](time) wecker bitte
+      - wecke mich um [sechs uhr dreißig](time)
+      - ich will um [fünf uhr](time) aufstehen
+      - bitte wecker [viertel vor sieben](time)
+      - wecker stellen [6 uhr 50](time)
+      - stell mir einen wecker auf [7:30](time)
+      - wecker [8](time)
+      - alarm [7](time)
+      - weck mich [6:45](time)
+      - wecker für [halb sechs](time)
+      - alarm um [viertel vor acht](time)
+      - stell den wecker auf [5:30](time)
+      - ich möchte um [6 uhr](time) geweckt werden
+      - wecker einstellen auf [7 uhr 15](time)
+      - stelle mir bitte einen alarm auf [8:00](time)
+      - kannst du einen wecker auf [6 uhr 30](time) stellen
+      - wecker bitte auf [halb neun](time)
+      - ich brauche einen wecker um [5](time)
+      - setz einen alarm auf [10 uhr](time)
+      - mach wecker [7:45](time)
+      - wecker aktivieren [6:15](time)
+      - alarm aktivieren um [7 uhr](time)
+      - stell alarm auf [halb sieben](time)
+      - weck mich bitte um [8 uhr](time)
+      - wecker um [9](time) stellen
+      - alarm für [6 uhr 45](time)
+      - ich will um [7](time) aufwachen
+      - aufwachen um [6:30](time)
+      - morgen [7 uhr](time) wecker
+      - wecken um [halb acht](time)
+      - wecker anlegen für [5:00](time)
+      - neuer wecker [6 uhr](time)
+      - alarm erstellen [7:30](time)
+      - weckruf um [8](time)
+      - [6](time) uhr wecker stellen
+      - stell wecker [5:45](time)
+      - alarm stellen auf [viertel nach sieben](time)
+      - ich brauch einen wecker für [halb fünf](time)
+      - weck mich um [4:30](time)
+      - wecker auf [zehn vor sieben](time)
+      - alarm um [fünf nach sechs](time)
+      - wecker [20 uhr](time)
+      - alarm [21:30](time)
+      - abendwecker [22 uhr](time)
+      - wecker für heute abend [19 uhr](time)
+      - morgenwecker [6:00](time)
+      - früh aufstehen [5](time) uhr
+      - wecker setzen [7](time)
+      - alarm setzen auf [8:15](time)
+      - wecker einrichten für [6:30](time)
+      - stell einen alarm für [halb sechs](time)
+      - wecke mich [viertel vor sechs](time)
+      - ich muss [6 uhr 50](time) aufstehen
+      - aufstehen um [7:00](time)
+      - wecker programmieren [5:30](time)
+      - alarm programmieren auf [6 uhr](time)
+
+  - intent: delete_alarm
+    examples: |
+      - lösche meinen wecker
+      - entferne den alarm
+      - mach den wecker aus
+      - ich brauche den wecker nicht mehr
+      - nimm den alarm weg
+      - kannst du meinen wecker löschen
+      - deaktiviere alle wecker
+      - schalte den morgenwecker ab
+      - entferne den 7 uhr wecker
+      - lösche alle alarme
+
+  - intent: update_alarm
+    examples: |
+      - ändere meinen wecker auf 8 uhr
+      - verschiebe den alarm auf halb neun
+      - stelle den wecker eine stunde später
+      - mach den wecker 30 minuten früher
+      - ändere die weckzeit auf 6:45
+      - verschiebe meinen alarm nach hinten
+      - stelle den wecker von 7 auf 8 uhr um
+      - mach aus dem 6 uhr wecker einen 7 uhr wecker
+      - korrigiere die weckzeit auf viertel vor sieben
+      - update meinen morgenwecker auf 5:30
+
+  - intent: get_alarm
+    examples: |
+      - wann klingelt mein wecker
+      - welche wecker habe ich gestellt
+      - zeige mir meine alarme
+      - um wie viel uhr werde ich geweckt
+      - liste alle wecker auf
+      - habe ich einen wecker gestellt
+      - wann ist mein nächster alarm
+      - welche weckzeiten sind aktiv
+      - gibt es aktive wecker
+      - check meine wecker
+      - wann läutet mein wecker
+      - wann geht mein wecker
+      - wann klingelt der nächste wecker
+      - wann ist der wecker eingestellt
+      - wann werde ich morgen geweckt
+      - wann ist mein alarm
+      - sag mir meine weckzeit
+      - wie spät ist mein wecker
+      - zu welcher uhrzeit klingelt mein alarm
+      - zeig mir alle wecker
+      - welche alarme habe ich
+      - liste meine alarme
+      - was für wecker sind eingestellt
+      - zeig mir die aktiven alarme
+      - welche weckzeiten habe ich gespeichert
+      - welche alarme laufen aktuell
+      - habe ich einen alarm
+      - ist ein wecker aktiv
+      - gibt es einen wecker für morgen
+      - ist ein wecker eingestellt
+      - habe ich überhaupt einen wecker gesetzt
+      - wann ist der nächste wecker
+      - wann klingelt der nächste alarm
+      - welcher alarm kommt als nächstes
+      - was ist mein nächster wecktermin
+      - wann ist die nächste weckzeit
+      - wann weckt mich mein handy
+      - wann ballert mein wecker los
+      - wann klingelt das ding morgen
+      - wann steh ich auf laut wecker
+      - wann muss ich raus laut alarm
+      - wann klingelt mein wecker morgen früh
+      - um wie viel uhr ist der wecker heute
+      - wann ist der alarm für werktage
+
+
+  - intent: snooze_alarm
+    examples: |
+      - noch 5 minuten
+      - schlummern
+      - snooze
+      - lass mich noch 10 minuten schlafen
+      - verschiebe den wecker um 15 minuten
+      - noch ein bisschen schlafen
+      - wecke mich in 5 minuten nochmal
+      - ich brauche noch etwas zeit
+      - gib mir noch 10 minuten
+      - später nochmal wecken
+
+  - intent: stop_alarm
+    examples: |
+      - stopp
+      - wecker aus
+      - alarm stoppen
+      - mach den wecker aus
+      - beende den alarm
+      - schluss mit dem geklingel
+      - ruhe
+      - aufhören
+      - genug geklingelt
+      - wecker beenden
+
+  - intent: ask_date
+    examples: |
+      - welches datum haben wir heute
+      - was ist das heutige datum
+      - der wievielte ist heute
+      - welcher tag ist heute
+      - kannst du mir das datum sagen
+      - datum bitte
+      - welches datum schreiben wir
+      - was für ein datum ist heute
+      - sag mir das aktuelle datum
+      - wie lautet das heutige datum
+
+  - intent: ask_day
+    examples: |
+      - welcher tag ist heute
+      - was für ein tag haben wir
+      - ist heute montag
+      - welchen tag schreiben wir
+      - sag mir den wochentag
+      - was ist heute für ein tag
+      - haben wir schon freitag
+      - ist heute wochenende
+      - welcher wochentag ist es
+      - tag der woche bitte
+
+  - intent: ask_weekday
+    examples: |
+      - ist heute ein werktag
+      - haben wir wochenende
+      - ist heute arbeitstag
+      - muss ich heute arbeiten
+      - ist heute schulfrei
+      - haben wir einen freien tag
+      - ist heute samstag oder sonntag
+      - werktag oder wochenende
+      - ist heute ein normaler arbeitstag
+      - haben die geschäfte heute offen
+
+  - intent: ask_weather
+    examples: |
+      - wie ist das wetter
+      - wie wird das wetter heute
+      - regnet es draußen
+      - scheint die sonne
+      - brauche ich einen regenschirm
+      - ist es kalt draußen
+      - wie ist das wetter morgen
+      - wetterbericht bitte
+      - muss ich eine jacke anziehen
+      - wie sind die wetterbedingungen
+
+  - intent: ask_temperature
+    examples: |
+      - wie warm ist es
+      - welche temperatur haben wir
+      - wie viel grad sind es
+      - ist es heiß draußen
+      - wie kalt ist es heute
+      - temperatur bitte
+      - wie sind die temperaturen
+      - zeige mir die gradzahl
+      - friert es draußen
+      - sind es über 20 grad
+
+  - intent: ask_forecast
+    examples: |
+      - wettervorhersage für die woche
+      - wie wird das wetter morgen
+      - wetterprognose bitte
+      - gibt es regen diese woche
+      - wird es am wochenende schön
+      - 7 tage vorhersage
+      - wetterbericht für nächste woche
+      - bleibt es trocken
+      - kommt ein unwetter
+      - wie sieht die wetterprognose aus
+
+  - intent: ask_uv_index
+    examples: |
+      - wie hoch ist der uv index
+      - brauche ich sonnencreme
+      - ist die sonneneinstrahlung stark
+      - uv strahlung heute
+      - muss ich mich vor der sonne schützen
+      - wie intensiv ist die sonne
+      - sonnenbrandgefahr heute
+      - uv wert bitte
+      - ist es gefährlich in der sonne
+      - sollte ich sonnenschutz auftragen
+
+  - intent: ask_air_quality
+    examples: |
+      - wie ist die luftqualität
+      - kann ich joggen gehen
+      - ist die luft sauber
+      - feinstaubbelastung heute
+      - luftverschmutzung draußen
+      - ist die luft gut zum atmen
+      - smogwarnung heute
+      - pollenflug aktuell
+      - allergiewarnung bitte
+      - kann ich das fenster öffnen
+
+  - intent: turn_on_light
+    examples: |
+      - mach das licht an
+      - licht einschalten
+      - schalte die lampe ein
+      - beleuchtung an
+      - mach es hell
+      - licht im wohnzimmer an
+      - schalte das licht in der küche ein
+      - lampen anmachen
+      - beleuchte das zimmer
+      - licht bitte
+
+  - intent: turn_off_light
+    examples: |
+      - mach das licht aus
+      - licht ausschalten
+      - schalte die lampe aus
+      - beleuchtung aus
+      - mach es dunkel
+      - licht im schlafzimmer aus
+      - lösche das licht in der küche
+      - lampen ausmachen
+      - verdunkle das zimmer
+      - lichter aus bitte
+
+  - intent: set_room_temperature
+    examples: |
+      - stelle die heizung auf 22 grad
+      - mach es wärmer
+      - temperatur auf 20 grad
+      - heizung höher drehen
+      - mir ist kalt
+      - klimaanlage auf 18 grad
+      - mach es kühler
+      - raumtemperatur erhöhen
+      - thermostat auf 21 grad stellen
+      - es ist zu warm hier
+
+  - intent: open_blinds
+    examples: |
+      - jalousien hoch
+      - rollladen öffnen
+      - mach die fenster auf
+      - vorhänge aufziehen
+      - lass licht rein
+      - öffne die rollläden
+      - jalousien hochfahren
+      - fensterläden öffnen
+      - mach die verdunkelung weg
+      - sonnenschutz hoch
+
+  - intent: close_blinds
+    examples: |
+      - jalousien runter
+      - rollladen schließen
+      - mach die fenster zu
+      - vorhänge zuziehen
+      - verdunkle das zimmer
+      - schließe die rollläden
+      - jalousien runterfahren
+      - fensterläden schließen
+      - mach dunkel
+      - sonnenschutz runter
+
+  - intent: create_reminder
+    examples: |
+      - erinnere mich daran die blumen zu gießen
+      - erstelle eine erinnerung für morgen
+      - ich muss daran denken milch zu kaufen
+      - setze eine erinnerung für 15 uhr
+      - erinnere mich an den arzttermin
+      - mach eine notiz dass ich anrufen muss
+      - vergiss nicht den geburtstag
+      - erinnerung für meeting um 14 uhr
+      - denk dran die wäsche aufzuhängen
+      - merke dir dass ich einkaufen muss
+
+  - intent: get_reminders
+    examples: |
+      - was steht auf meiner erinnerungsliste
+      - zeige meine erinnerungen
+      - welche erinnerungen habe ich
+      - was muss ich heute noch machen
+      - liste meine notizen auf
+      - gibt es erinnerungen für heute
+      - was habe ich mir gemerkt
+      - check meine to-dos
+      - was steht an
+      - zeig mir meine merkliste
+
+  - intent: delete_reminder
+    examples: |
+      - lösche die erinnerung
+      - entferne die notiz
+      - ich habe das schon erledigt
+      - nimm das von der liste
+      - erinnerung löschen
+      - das brauche ich nicht mehr
+      - streiche das von meiner liste
+      - entferne den eintrag
+      - das ist erledigt
+      - lösche alle erinnerungen
+
+  - intent: set_timer
+    examples: |
+      - stelle einen timer auf 10 minuten
+      - timer für 5 minuten
+      - countdown 30 sekunden
+      - starte einen 15 minuten timer
+      - ich brauche einen timer für eine stunde
+      - zeitschaltuhr auf 45 minuten
+      - mach einen countdown für 2 minuten
+      - timer für die nudeln 8 minuten
+      - stoppuhr für 20 minuten bitte
+      - wecker in 25 minuten
+
+  - intent: get_timer
+    examples: |
+      - wie lange läuft der timer noch
+      - restzeit vom timer
+      - wann klingelt der timer
+      - wie viel zeit ist noch übrig
+      - zeige mir den countdown
+      - timer status
+      - läuft noch ein timer
+      - wie lange noch
+      - verbleibende zeit
+      - wann ist der timer fertig
+
+  - intent: play_music
+    examples: |
+      - spiele musik
+      - mach musik an
+      - ich möchte etwas hören
+      - spiele meine playlist
+      - musik abspielen
+      - leg was auf
+      - lass musik laufen
+      - starte die wiedergabe
+      - spiel mir was vor
+      - musik bitte
+
+  - intent: pause_music
+    examples: |
+      - pausiere die musik
+      - musik anhalten
+      - stopp mal kurz
+      - wiedergabe pausieren
+      - halt die musik an
+      - pause bitte
+      - unterbrich die wiedergabe
+      - musik stoppen
+      - mach mal pause
+      - anhalten
+
+  - intent: skip_song
+    examples: |
+      - nächstes lied
+      - song überspringen
+      - weiter
+      - nächster titel
+      - das lied gefällt mir nicht
+      - skip
+      - spring zum nächsten
+      - anderes lied bitte
+      - vorwärts
+      - nächster track
+
+  - intent: play_radio
+    examples: |
+      - mach das radio an
+      - spiele radiosender
+      - ich möchte radio hören
+      - schalte auf bayern 3
+      - radio einschalten
+      - sender abspielen
+      - livestream starten
+      - mach swr3 an
+      - radiostation spielen
+      - fm radio bitte
+
+  - intent: set_volume
+    examples: |
+      - lauter bitte
+      - mach leiser
+      - lautstärke auf 50 prozent
+      - dreh die musik auf
+      - zu laut
+      - volume runter
+      - stelle die lautstärke auf 70
+      - mach die musik leiser
+      - volle lautstärke
+      - ton anpassen
+
+  - intent: ask_joke
+    examples: |
+      - erzähl mir einen witz
+      - kennst du einen guten witz
+      - bring mich zum lachen
+      - ich brauche was lustiges
+      - mach einen scherz
+      - sag was witziges
+      - unterhalte mich
+      - erzähl einen schenkelklopfer
+      - ich will lachen
+      - joke bitte
+
+  - intent: ask_fact
+    examples: |
+      - erzähl mir einen fakt
+      - wusstest du dass
+      - gib mir eine interessante information
+      - sag mir etwas was ich nicht weiß
+      - trivia bitte
+      - fun fact
+      - erstaunliche tatsache
+      - lern mich was neues
+      - interessantes wissen
+      - zufälliger fakt
+
+  - intent: ask_definition
+    examples: |
+      - was bedeutet photosynthese
+      - definiere demokratie
+      - erkläre mir den begriff
+      - was heißt das
+      - definition von
+      - was versteht man unter
+      - kannst du mir erklären was
+      - bedeutung von
+      - was ist ein
+      - wie definiert man
+
+  - intent: ask_translation
+    examples: |
+      - übersetze hallo auf englisch
+      - was heißt danke auf französisch
+      - wie sagt man tschüss auf spanisch
+      - übersetzung von
+      - translate
+      - auf deutsch bitte
+      - was bedeutet hello
+      - in andere sprache
+      - wie übersetzt man
+      - sag das auf italienisch
+
+  - intent: ask_calculation
+    examples: |
+      - was ist 15 plus 27
+      - rechne 100 minus 45
+      - multipliziere 8 mit 9
+      - teile 144 durch 12
+      - löse die gleichung
+      - berechne
+      - was ergibt
+      - mathematik hilfe
+      - rechenaufgabe
+      - kalkulation von
+
+  - intent: change_language
+    examples: |
+      - stelle die sprache auf englisch
+      - ich möchte deutsch sprechen
+      - ändere die sprache
+      - wechsle zu französisch
+      - sprich italienisch mit mir
+      - sprachwechsel auf spanisch
+      - andere sprache bitte
+      - kann ich die sprache ändern
+      - systemsprache umstellen
+      - sprache auf türkisch
+
+  - intent: change_name
+    examples: |
+      - nenne mich johannes
+      - ich heiße maria
+      - mein name ist peter
+      - ändere meinen namen
+      - du kannst mich thomas nennen
+      - ich bin sarah
+      - neuer benutzername
+      - nenn mich anders
+      - name ändern auf
+      - ab jetzt heiße ich
+
+  - intent: user_feedback_positive
+    examples: |
+      - das war hilfreich
+      - gut gemacht
+      - super antwort
+      - perfekt
+      - das hat geholfen
+      - toll
+      - ausgezeichnet
+      - sehr gut
+      - klasse
+      - das war richtig
+
+  - intent: user_feedback_negative
+    examples: |
+      - das war nicht hilfreich
+      - falsche antwort
+      - das stimmt nicht
+      - schlecht
+      - nicht gut
+      - das hat nicht geholfen
+      - unbrauchbar
+      - das war falsch
+      - schlechte antwort
+      - nicht zufrieden

@@ -1,0 +1,252 @@
+version: "3.1"
+
+rules:
+  - rule: Greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Thank you
+    steps:
+      - intent: thank_you
+      - action: utter_you_are_welcome
+
+  - rule: Affirm
+    steps:
+      - intent: affirm
+      - action: utter_affirm
+
+  - rule: Deny
+    steps:
+      - intent: deny
+      - action: utter_deny
+
+  - rule: Who are you
+    steps:
+      - intent: who_are_you
+      - action: utter_who_am_i
+
+  - rule: How are you
+    steps:
+      - intent: how_are_you
+      - action: utter_how_am_i
+
+  - rule: What can you do
+    steps:
+      - intent: what_can_you_do
+      - action: utter_capabilities
+
+  - rule: Positive feedback
+    steps:
+      - intent: user_feedback_positive
+      - action: utter_positive_feedback
+
+  - rule: Negative feedback
+    steps:
+      - intent: user_feedback_negative
+      - action: utter_negative_feedback
+
+  - rule: Repeat request
+    steps:
+      - intent: repeat_last
+      - action: utter_repeat_request
+
+  - rule: Fallback question
+    steps:
+      - intent: fallback_question
+      - action: utter_fallback_help
+
+  - rule: NLU fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_chatgpt_fallback
+
+  - rule: Get time
+    steps:
+      - intent: ask_time
+      - action: action_get_time
+
+  - rule: Set alarm
+    steps:
+      - intent: set_alarm
+      - action: action_set_alarm
+
+  - rule: Get alarms
+    steps:
+      - intent: get_alarm
+      - action: action_get_alarm
+
+  - rule: Date
+    steps:
+      - intent: ask_date
+      - action: action_chatgpt_fallback
+
+  - rule: Day
+    steps:
+      - intent: ask_day
+      - action: action_chatgpt_fallback
+
+  - rule: Weekday
+    steps:
+      - intent: ask_weekday
+      - action: action_chatgpt_fallback
+
+  - rule: Delete alarm
+    steps:
+      - intent: delete_alarm
+      - action: action_chatgpt_fallback
+
+  - rule: Update alarm
+    steps:
+      - intent: update_alarm
+      - action: action_chatgpt_fallback
+
+  - rule: Snooze alarm
+    steps:
+      - intent: snooze_alarm
+      - action: action_chatgpt_fallback
+
+  - rule: Stop alarm
+    steps:
+      - intent: stop_alarm
+      - action: action_chatgpt_fallback
+
+  - rule: Weather
+    steps:
+      - intent: ask_weather
+      - action: action_chatgpt_fallback
+
+  - rule: Temperature
+    steps:
+      - intent: ask_temperature
+      - action: action_chatgpt_fallback
+
+  - rule: Forecast
+    steps:
+      - intent: ask_forecast
+      - action: action_chatgpt_fallback
+
+  - rule: UV index
+    steps:
+      - intent: ask_uv_index
+      - action: action_chatgpt_fallback
+
+  - rule: Air quality
+    steps:
+      - intent: ask_air_quality
+      - action: action_chatgpt_fallback
+
+  - rule: Light on
+    steps:
+      - intent: turn_on_light
+      - action: action_chatgpt_fallback
+
+  - rule: Light off
+    steps:
+      - intent: turn_off_light
+      - action: action_chatgpt_fallback
+
+  - rule: Room temperature
+    steps:
+      - intent: set_room_temperature
+      - action: action_chatgpt_fallback
+
+  - rule: Open blinds
+    steps:
+      - intent: open_blinds
+      - action: action_chatgpt_fallback
+
+  - rule: Close blinds
+    steps:
+      - intent: close_blinds
+      - action: action_chatgpt_fallback
+
+  - rule: Create reminder
+    steps:
+      - intent: create_reminder
+      - action: action_chatgpt_fallback
+
+  - rule: Get reminders
+    steps:
+      - intent: get_reminders
+      - action: action_chatgpt_fallback
+
+  - rule: Delete reminder
+    steps:
+      - intent: delete_reminder
+      - action: action_chatgpt_fallback
+
+  - rule: Set timer
+    steps:
+      - intent: set_timer
+      - action: action_chatgpt_fallback
+
+  - rule: Get timer
+    steps:
+      - intent: get_timer
+      - action: action_chatgpt_fallback
+
+  - rule: Play music
+    steps:
+      - intent: play_music
+      - action: action_chatgpt_fallback
+
+  - rule: Pause music
+    steps:
+      - intent: pause_music
+      - action: action_chatgpt_fallback
+
+  - rule: Skip song
+    steps:
+      - intent: skip_song
+      - action: action_chatgpt_fallback
+
+  - rule: Play radio
+    steps:
+      - intent: play_radio
+      - action: action_chatgpt_fallback
+
+  - rule: Set volume
+    steps:
+      - intent: set_volume
+      - action: action_chatgpt_fallback
+
+  - rule: Joke
+    steps:
+      - intent: ask_joke
+      - action: action_chatgpt_fallback
+
+  - rule: Fact
+    steps:
+      - intent: ask_fact
+      - action: action_chatgpt_fallback
+
+  - rule: Definition
+    steps:
+      - intent: ask_definition
+      - action: action_chatgpt_fallback
+
+  - rule: Translation
+    steps:
+      - intent: ask_translation
+      - action: action_chatgpt_fallback
+
+  - rule: Calculation
+    steps:
+      - intent: ask_calculation
+      - action: action_chatgpt_fallback
+
+  - rule: Change language
+    steps:
+      - intent: change_language
+      - action: action_chatgpt_fallback
+
+  - rule: Change name
+    steps:
+      - intent: change_name
+      - action: action_chatgpt_fallback

@@ -1,0 +1,9 @@
+services:
+  simple-dashboard:
+    image: simple-dashboard:latest
+    container_name: simple-dashboard
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production

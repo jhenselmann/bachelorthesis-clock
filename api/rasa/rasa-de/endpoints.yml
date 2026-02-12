@@ -1,0 +1,8 @@
+action_endpoint:
+  url: "http://actions-de:5055/webhook"
+
+tracker_store:
+  type: sql
+  dialect: "postgresql"
+  url: ${POSTGRES_URL}
+  db: "de"

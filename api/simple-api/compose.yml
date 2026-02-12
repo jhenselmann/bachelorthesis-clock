@@ -1,0 +1,27 @@
+services:
+  simple-api:
+    image: simple-api:latest
+    container_name: simple-api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10000:8000"
+    volumes:
+      - ./audio:/app/audio
+    networks:
+      - rasa-network
+    environment:
+      - PORT=8000
+      - API_TOKEN=${API_TOKEN}
+      - POSTGRES_SERVER=${POSTGRES_SERVER}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_TTS_VOICE=${OPENAI_TTS_VOICE:-alloy}
+      - RASA_URL=${RASA_URL}
+
+networks:
+  rasa-network:
+    external: true
+    name: rasa_rasa-network

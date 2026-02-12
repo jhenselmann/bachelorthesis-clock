@@ -1,0 +1,131 @@
+version: "3.1"
+
+entities:
+  - time
+
+intents:
+  # Basics
+  - greet
+  - goodbye
+  - thank_you
+  - deny
+  - affirm
+  - who_are_you
+  - how_are_you
+  - what_can_you_do
+  - repeat_last
+  - fallback_question
+  - nlu_fallback
+  - user_feedback_positive
+  - user_feedback_negative
+  # Zeit & Wecker
+  - set_alarm
+  - delete_alarm
+  - update_alarm
+  - get_alarm
+  - snooze_alarm
+  - stop_alarm
+  - ask_time
+  - ask_date
+  - ask_day
+  - ask_weekday
+  # Wetter
+  - ask_weather
+  - ask_temperature
+  - ask_forecast
+  - ask_uv_index
+  - ask_air_quality
+  # Smart Home
+  - turn_on_light
+  - turn_off_light
+  - set_room_temperature
+  - open_blinds
+  - close_blinds
+  # Erinnerungen & Timer
+  - create_reminder
+  - get_reminders
+  - delete_reminder
+  - set_timer
+  - get_timer
+  # Entertainment
+  - play_music
+  - pause_music
+  - skip_song
+  - play_radio
+  - set_volume
+  # Wissen
+  - ask_joke
+  - ask_fact
+  - ask_definition
+  - ask_translation
+  - ask_calculation
+  # Sonstiges
+  - change_language
+  - change_name
+
+responses:
+  utter_greet:
+    - text: "Hallo! Wie kann ich dir helfen?"
+    - text: "Hey! Was kann ich für dich tun?"
+    - text: "Guten Tag!"
+
+  utter_goodbye:
+    - text: "Auf Wiedersehen!"
+    - text: "Tschüss!"
+    - text: "Bis bald!"
+
+  utter_you_are_welcome:
+    - text: "Gern geschehen!"
+    - text: "Kein Problem!"
+
+  utter_affirm:
+    - text: "Okay!"
+    - text: "Alles klar!"
+
+  utter_deny:
+    - text: "Okay, dann nicht."
+    - text: "Verstanden."
+
+  utter_who_am_i:
+    - text: "Ich bin dein Sprachassistent. Frag mich einfach!"
+
+  utter_how_am_i:
+    - text: "Mir geht es gut, danke!"
+
+  utter_capabilities:
+    - text: "Ich kann Wecker stellen, die Uhrzeit sagen und Fragen beantworten."
+
+  utter_positive_feedback:
+    - text: "Freut mich!"
+    - text: "Danke für dein Feedback!"
+
+  utter_negative_feedback:
+    - text: "Tut mir leid. Was genau brauchst du?"
+
+  utter_repeat_request:
+    - text: "Kannst du das nochmal sagen?"
+
+  utter_fallback_help:
+    - text: "Das habe ich nicht verstanden. Kannst du das anders formulieren?"
+
+actions:
+  - action_chatgpt_fallback
+  - action_set_alarm
+  - action_get_alarm
+  - action_get_time
+
+slots:
+  current_time:
+    type: text
+    mappings:
+      - type: custom
+  alarm_time:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: time
+
+session_config:
+  session_expiration_time: 10
+  carry_over_slots_to_new_session: true
