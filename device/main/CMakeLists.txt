@@ -1,0 +1,49 @@
+set(COMPONENT_SRCS
+    "main.c"
+    "network/wifi.c"
+    "audio/codec_driver.c"
+    "audio/wakeword.c"
+    "audio/websocket_stream.c"
+    "audio/vad.c"
+    "audio/audio_resampler.c"
+    "audio/audio_collector.c"
+    "audio/audio_playback.c"
+    "audio/conversation_controller.c"
+    "alarm/alarm_manager.c"
+    "alarm/alarm_playback.c"
+    "ui/ui_manager.c"
+    "ui/homescreen_ui.c"
+    "ui/voice_assistant_ui.c"
+    "ui/settings_ui.c"
+    "ui/ring_overlay.c"
+    "ui/icons/mic_icon.c"
+    "ui/icons/error_icon.c"
+    "ui/scenarios/scenario_a.c"
+    "ui/scenarios/scenario_b.c"
+    "ui/scenarios/scenario_common.c"
+    "ui/fonts/montserrat_72.c"
+    "ui/fonts/montserrat_96.c"
+    "ui/fonts/montserrat_192.c"
+    "ui/fonts/orbitron_192.c"
+)
+
+set(COMPONENT_ADD_INCLUDEDIRS
+    "."
+    "network"
+    "audio"
+    "alarm"
+    "ui"
+    "ui/icons"
+    "ui/scenarios"
+    "config"
+    "utils"
+)
+
+# Embed audio files as binary data
+set(COMPONENT_EMBED_FILES
+    "audio/sounds/ok.mp3"
+    "audio/sounds/error.mp3"
+    "audio/sounds/alarm.mp3"
+)
+
+register_component()
